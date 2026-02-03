@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Spotipay</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
     :root {
       --primary: #6366f1;
       --dark: #0f172a;
-      --gray: #64748b;
-      --light: #f8fafc;
+      --gray: #e5e7eb;
+      --light: #ffffff;
     }
 
     * {
@@ -23,11 +23,38 @@
       font-family: "Inter", sans-serif;
     }
 
-    /* ✅ UPDATED BACKGROUND (pink–violet blend) */
+    /* 🎵 SLIDING ARTIST BACKGROUND */
     body {
-      background: linear-gradient(135deg, #fbcfe8 0%, #c4b5fd 100%);
-      color: var(--dark);
+      min-height: 100vh;
+      color: white;
       line-height: 1.6;
+      background-size: cover;
+      background-position: center;
+      animation: musicSlide 25s infinite ease-in-out;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: -1;
+    }
+
+    @keyframes musicSlide {
+      0% {
+        background-image: url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4");
+      }
+      33% {
+        background-image: url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2");
+      }
+      66% {
+        background-image: url("https://images.unsplash.com/photo-1514361892635-eae31e65ad38");
+      }
+      100% {
+        background-image: url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4");
+      }
     }
 
     header {
@@ -35,10 +62,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 4rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
       position: sticky;
       top: 0;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      backdrop-filter: blur(10px);
     }
 
     header h1 {
@@ -49,7 +77,7 @@
     nav a {
       margin-left: 2rem;
       text-decoration: none;
-      color: var(--gray);
+      color: #475569;
       font-weight: 500;
     }
 
@@ -71,7 +99,7 @@
     }
 
     .hero p {
-      color: var(--gray);
+      color: #e5e7eb;
       margin-bottom: 2rem;
     }
 
@@ -83,11 +111,6 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
     }
 
     .hero-img {
@@ -99,7 +122,8 @@
 
     .features {
       padding: 5rem 4rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--dark);
     }
 
     .features h3 {
@@ -117,18 +141,14 @@
     .card {
       padding: 2rem;
       border-radius: 16px;
-      background: var(--light);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .card h4 {
-      margin-bottom: 0.5rem;
+      background: #f8fafc;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     footer {
       padding: 2rem;
       text-align: center;
-      color: var(--gray);
+      color: #e5e7eb;
     }
 
     @media (max-width: 900px) {
@@ -143,46 +163,47 @@
 <body>
 
   <header>
-    <h1>MySite</h1>
+    <h1>Spotipay</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#">Features</a>
-      <a href="#">Contact</a>
+      <a href="#">Artist</a>
+      <a href="#">Album</a>
     </nav>
   </header>
 
   <section class="hero">
     <div>
-      <h2>Build Something Modern 🚀</h2>
-      <p>
-        A sleek, responsive website template built with clean HTML and CSS.
-        Perfect for startups, portfolios, or landing pages.
-      </p>
+      <h2>Feel the Sound</h2>
+      <p>Press play. Let the world fade.</p>
       <a href="#" class="btn">Get Started</a>
     </div>
     <div class="hero-img"></div>
   </section>
 
   <section class="features">
-    <h3>Why Choose This?</h3>
+    <h3>Why Choose Our Music?</h3>
+
     <div class="feature-grid">
       <div class="card">
-        <h4>⚡ Fast</h4>
-        <p>Lightweight and optimized for performance.</p>
+        <h4>🎧 High Quality Sound</h4>
+        <p>Crystal-clear audio for the best listening experience.</p>
       </div>
+
       <div class="card">
-        <h4>📱 Responsive</h4>
-        <p>Looks great on desktop, tablet, and mobile.</p>
+        <h4>📱 Listen Anywhere</h4>
+        <p>Enjoy your music on desktop, tablet, and mobile devices.</p>
       </div>
+
       <div class="card">
-        <h4>🎨 Modern Design</h4>
-        <p>Clean layout with smooth spacing and typography.</p>
+        <h4>🎶 Endless Vibes</h4>
+        <p>Discover tracks that match every mood and moment.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2026 MySite. All rights reserved.
+    © 2026 Spotipay. All rights reserved.
   </footer>
 
 </body>
